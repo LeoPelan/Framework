@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Controller;
+
+class FrontController
+{
+
+  function show($id)
+  {
+    echo "Je suis l'article ".$id;
+  }
+
+  function twigArticle(){
+    try {
+      $loader = new \Twig_Loader_Filesystem('templates');
+      $twig = new \Twig_Environment($loader);
+      $template = $twig->loadTemplate('test.twig');
+      echo $template->render(array(
+        'valeur_name' => 'Twig'));
+    } catch (Exception $e) {
+    die ('ERROR: ' . $e->getMessage());
+    }
+  }
+}

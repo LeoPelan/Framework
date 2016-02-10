@@ -1,0 +1,23 @@
+<?php
+/**
+ *
+ */
+class Log
+{
+  public static function writeLog($req, $res, $query){
+  $error_log = __DIR__.'/../log/error.log';
+  $access_log = __DIR__.'/../log/access.log';
+
+    if(!$res){
+  $errorMsg = $req->errorInfo();
+  $data = $errorMsg[2]."\n";
+  file_put_contents($error_log, $data, FILE_APPEND);
+    } else {
+  $validMsg = $query;
+  $data =  $validMsg."\n";
+  file_put_contents($access_log, $data, FILE_APPEND);
+
+}
+}
+}
+

@@ -1,0 +1,17 @@
+<?php
+
+require 'vendor/autoload.php';
+require 'core/Log.php';
+
+$router = new App\Router\Router($_GET['url']);
+
+$router->get('/', function(){ echo 'Homepage'; }, 'Home');
+$router->get('/posts', function(){ echo 'Tous les articles';}, 'Post');
+//$router->get('/posts/:id', function($id){ echo "Afficher l'article " .$id; });
+$router->get('/posts/:id', "Front#show");
+$router->get('/article', "Front#twigArticle");
+$router->post('/posts/:id', function($id){ echo "Poster l'article " .$id; });
+
+
+$router->run();
+

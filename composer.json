@@ -1,0 +1,21 @@
+{
+    "name": "leopelan/framework-v4",
+    "authors": [
+        {
+            "name": "LeoPelan",
+            "email": "leo.pelan@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "App\\": "src",
+        "Controller\\":"src/Controller/",
+        "Entity\\": "Entity/"
+      }
+    },
+    "require": {
+        "twig/twig": "~1.0",
+        "phpdocumentor/phpdocumentor": "2.*",
+        "droxyum/supinternet-orm": "dev-master"
+    }
+}
