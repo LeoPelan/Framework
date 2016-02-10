@@ -43,6 +43,8 @@ class Router {
         }
 
         $error_log = __DIR__.'/../../log/error.log';
+        var_dump($error_log);
+        var_dump(__DIR__);
         $errorUrl = $_SERVER['REQUEST_URI'];
         date_default_timezone_set('Europe/Paris');
         $data = "\n".date('d/m/Y == H:i:s')." -> ".$errorUrl;

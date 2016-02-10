@@ -1,7 +1,17 @@
 <?php
 
 require 'vendor/autoload.php';
-require 'core/Log.php';
+
+
+$Connection = new \ORM\Connection('localhost', 'framework', 'root', 'root');
+var_dump('expression');
+$EntityManager = new \ORM\Entity\Manager();
+
+$Post = new \Entity\Post(); //New post
+$Post->setTitle('My post title'); //Insert title
+$Post->setContent('My post content'); //Insert content
+$EntityManager->persist($Post); //Insert post in database
+
 
 $router = new App\Router\Router($_GET['url']);
 
